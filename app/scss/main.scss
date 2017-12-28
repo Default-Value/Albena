@@ -30,7 +30,7 @@ a {
 }
 
 .header {
-	background: url('/img/albena_hero.jpg') center / cover;
+	background: url('https://default-value.github.io/Albena/img/albena_hero.JPG') center / cover;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -127,20 +127,8 @@ a {
 	margin-bottom: 0;
 }
 
-.link {
-	position: relative;
-	&::after {
-		content: ' →';
-		position: absolute;
-		right: -1.25em;
-		opacity: 0;
-	}
-	&:hover {
-		opacity: .5;
-		&::after {
-			opacity: 1;
-		}
-	}
+.link:hover {
+	opacity: .5;
 }
 
 .arrow {

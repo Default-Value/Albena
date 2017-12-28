@@ -10,7 +10,9 @@ var gulp           = require('gulp'),
 		cache          = require('gulp-cache'),
 		autoprefixer   = require('gulp-autoprefixer'),
 		ftp            = require('vinyl-ftp'),
-		notify         = require("gulp-notify");
+		notify         = require("gulp-notify"),
+		deploy         = require('gulp-gh-pages');
+
 
 gulp.task('common-js', function() {
 	return gulp.src([
@@ -76,6 +78,11 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 		'app/js/scripts.min.js',
 		]).pipe(gulp.dest('dist/js'));
 
+});
+
+gulp.task('deploy', function () {
+	return gulp.src('dist/**/*')
+  .pipe(deploy())
 });
 
 gulp.task('removedist', function() { return del.sync('dist'); });
