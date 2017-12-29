@@ -83,6 +83,7 @@ a {
 		content: 'welcome';
 	}
 	&:hover {
+		cursor: pointer;
 		&::after {
 			opacity: .5;
 			content: 'reservations →';
